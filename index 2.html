@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Rotating Image Gallery</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: lightblue;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .gallery {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      transform-style: preserve-3d;
+      animation: rotate 10s infinite linear;
+    }
+
+    .gallery img {
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+      border-radius: 20%;
+    }
+
+    .gallery img:nth-child(1) { transform: rotateY(0deg) translateZ(400px); }
+    .gallery img:nth-child(2) { transform: rotateY(60deg) translateZ(400px); }
+    .gallery img:nth-child(3) { transform: rotateY(120deg) translateZ(400px); }
+    .gallery img:nth-child(4) { transform: rotateY(180deg) translateZ(400px); }
+    .gallery img:nth-child(5) { transform: rotateY(240deg) translateZ(400px); }
+    .gallery img:nth-child(6) { transform: rotateY(300deg) translateZ(400px); }
+
+    @keyframes rotate {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <img src="pic4.jpg.jpg" alt="Image 1">
+    <img src="image 3.jpg" alt="Image 2">
+    <img src="image 2.jpg" alt="Image 3">
+    <img src="image 1.jpg" alt="Image 4">
+    <img src="flower.jpg" alt="Image 5">
+    <img src="coffee.jpg.jpg" alt="Image 6">
+  </div>
+</body>
+</html>
